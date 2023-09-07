@@ -5,6 +5,8 @@
 	import Footer from '$components/Footer.svelte';
 	import RSlogo from '$lib/RSlogo.png';
 	import { Toaster } from 'svelte-french-toast';
+	export let data: any;
+	const footer = data.props.footer;
 </script>
 
 <AppShell>
@@ -79,5 +81,5 @@
 		</div>
 	</Drawer>
 	<slot />
-	<Footer />
+	<Footer {footer} />
 </AppShell>

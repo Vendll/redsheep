@@ -9,7 +9,8 @@ export const actions: Actions = {
 
 		try {
 			console.log(data);
-			toast.success('Sikeres küldés!', {
+			/* fetch("/api/sendmail"); */
+			toast.success('Sikeres küldés! Hamarosan felvesszük Önnel a kapcsolatot!', {
 				position: 'bottom-center'
 			});
 		} catch (error) {

@@ -3,16 +3,26 @@
 	export let form;
 	import { onMount } from 'svelte';
 	import toast from 'svelte-french-toast';
+	export let data: any;
+	const contactPage = data.props.contactPage;
 </script>
 
 <div class="relative bg-white">
 	<div class="lg:absolute lg:inset-0">
 		<div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-			<img
-				class="h-56 w-full object-cover lg:absolute lg:h-full"
-				src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
-				alt=""
-			/>
+			{#if contactPage.image}
+				<img
+					class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+					src={contactPage.image}
+					alt=""
+				/>
+			{:else}
+				<img
+					class="h-56 w-full object-cover lg:absolute lg:h-full"
+					src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
+					alt=""
+				/>
+			{/if}
 		</div>
 	</div>
 	<div
@@ -20,9 +30,9 @@
 	>
 		<div class="lg:pr-8">
 			<div class="mx-auto max-w-md sm:max-w-lg lg:mx-0">
-				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Let's work together</h2>
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{contactPage.title}</h2>
 				<p class="mt-4 text-lg text-gray-500 sm:mt-3">
-					We would love to hear from you! Send us a message using the form opposite, or email us.
+					{contactPage.description}
 				</p>
 				<form
 					method="POST"
@@ -31,8 +41,9 @@
 					use:enhance={() => {
 						return async ({ update }) => {
 							await update();
-							toast.success('Your message has been sent!', {
-								position: 'bottom-right'
+							toast.success('Sikeres küldés! Hamarosan felvesszük Önnel a kapcsolatot!', {
+								position: 'bottom-center',
+								className: 'bg-primary-500'
 							});
 						};
 					}}
@@ -41,7 +52,20 @@
 						<p class="error">{form.error}</p>
 					{/if}
 					<div>
-						<label for="firstName" class="block text-sm font-medium text-gray-700">First name</label
+						<label for="lastName" class="block text-sm font-medium text-gray-700">Vezetéknév</label>
+						<div class="mt-1">
+							<input
+								type="text"
+								name="lastName"
+								value={form?.lastName ?? ''}
+								autocomplete="family-name"
+								required
+								class="input variant-ringed-primary"
+							/>
+						</div>
+					</div>
+					<div>
+						<label for="firstName" class="block text-sm font-medium text-gray-700">Keresztnév</label
 						>
 						<div class="mt-1">
 							<input
@@ -49,19 +73,6 @@
 								name="firstName"
 								autocomplete="given-name"
 								value={form?.firstName ?? ''}
-								required
-								class="input variant-ringed-primary"
-							/>
-						</div>
-					</div>
-					<div>
-						<label for="lastName" class="block text-sm font-medium text-gray-700">Last name</label>
-						<div class="mt-1">
-							<input
-								type="text"
-								name="lastName"
-								value={form?.lastName ?? ''}
-								autocomplete="family-name"
 								required
 								class="input variant-ringed-primary"
 							/>
@@ -82,7 +93,10 @@
 						<!-- {#if form?.missing}<p class="error">The email field is required</p>{/if} -->
 					</div>
 					<div class="sm:col-span-2">
-						<label for="company" class="block text-sm font-medium text-gray-700">Company</label>
+						<div class="flex justify-between">
+							<label for="company" class="block text-sm font-medium text-gray-700">Cégnév</label>
+							<span class="text-sm text-gray-500">Opcionális</span>
+						</div>
 						<div class="mt-1">
 							<input
 								type="text"
@@ -95,8 +109,8 @@
 					</div>
 					<div class="sm:col-span-2">
 						<div class="flex justify-between">
-							<label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-							<span class="text-sm text-gray-500">Optional</span>
+							<label for="phone" class="block text-sm font-medium text-gray-700">Telefonszám</label>
+							<span class="text-sm text-gray-500">Opcionális</span>
 						</div>
 						<div class="mt-1">
 							<input
@@ -128,7 +142,7 @@
 					</div>
 
 					<div class="text-right sm:col-span-2">
-						<button type="submit" class="btn variant-filled-primary">Submit</button>
+						<button type="submit" class="btn variant-filled-primary">Küldés</button>
 					</div>
 				</form>
 			</div>

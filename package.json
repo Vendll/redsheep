@@ -36,7 +36,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sendgrid/mail": "^7.7.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
+		"pocketbase": "^0.18.0",
 		"svelte-french-toast": "^1.2.0",
 		"svelte-scrolling": "^1.2.2"
 	}
