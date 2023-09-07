@@ -25,6 +25,7 @@
 			{/if}
 		</div>
 	</div>
+
 	<div
 		class="relative py-16 px-6 sm:py-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:py-32"
 	>
