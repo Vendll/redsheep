@@ -23,7 +23,7 @@
 					alt={hero.title}
 				/>
 			{/if}
-			<div class="absolute inset-0 bg-gray-800 mix-blend-multiply" aria-hidden="true" />
+			<div class="absolute inset-0 bg-gray-800/30 mix-blend-multiply" aria-hidden="true" />
 		</div>
 		<div class="grid h-full place-content-center">
 			<div class="relative mx-auto text-center max-w-7xl py-24 px-6 pt-32 lg:px-8">

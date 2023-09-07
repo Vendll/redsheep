@@ -34,7 +34,7 @@
 		</nav>
 		<div class="mt-10 flex justify-center space-x-10">
 			{#if footer.facebook}
-				<a href={footer.facebook} class="text-gray-400 hover:text-gray-300">
+				<a href={footer.facebook} target="_blank" class="text-gray-400 hover:text-gray-300">
 					<span class="sr-only">Facebook</span>
 					<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path
@@ -46,7 +46,7 @@
 				</a>
 			{/if}
 			{#if footer.instagram}
-				<a href={footer.instagram} class="text-gray-400 hover:text-gray-300">
+				<a href={footer.instagram} target="_blank" class="text-gray-400 hover:text-gray-300">
 					<span class="sr-only">Instagram</span>
 					<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path
@@ -57,7 +57,7 @@
 					</svg>
 				</a>{/if}
 			{#if footer.twitter}
-				<a href={footer.twitter} class="text-gray-400 hover:text-gray-300">
+				<a href={footer.twitter} target="_blank" class="text-gray-400 hover:text-gray-300">
 					<span class="sr-only">Twitter</span>
 					<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path
@@ -66,7 +66,7 @@
 					</svg>
 				</a>{/if}
 			{#if footer.tiktok}
-				<a href={footer.tiktok} class="text-gray-400 hover:text-gray-300">
+				<a href={footer.tiktok} target="_blank" class="text-gray-400 hover:text-gray-300">
 					<span class="sr-only">Tiktok</span>
 					<svg fill="currentColor" class="h-6 w-6" viewBox="0 0 24 24" aria-hidden="true">
 						<path
@@ -75,7 +75,7 @@
 					</svg>
 				</a>{/if}
 			{#if footer.youtube}
-				<a href={footer.youtube} class="text-gray-400 hover:text-gray-300">
+				<a href={footer.youtube} target="_blank" class="text-gray-400 hover:text-gray-300">
 					<span class="sr-only">YouTube</span>
 					<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path
@@ -87,7 +87,7 @@
 				</a>
 			{/if}
 			{#if footer.linkedin}
-				<a href={footer.youtube} class="text-gray-400 hover:text-gray-300">
+				<a href={footer.youtube} target="_blank" class="text-gray-400 hover:text-gray-300">
 					<span class="sr-only">LinkedIn</span>
 					<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
 						<path
