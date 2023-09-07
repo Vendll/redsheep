@@ -23,7 +23,7 @@
 				{#each szolgaltatasok as szolg}
 					<div class="relative p-6 rounded-[--theme-rounded-base] variant-filled-primary">
 						<div class="relative pl-16">
-							<dt class="text-base font-semibold leading-7 text-white">
+							<dt class="text-2xl font-semibold leading-7 text-white">
 								<div
 									class="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-full bg-white"
 								>
@@ -95,7 +95,7 @@
 								</div>
 								{szolg.title}
 							</dt>
-							<dd class="mt-2 text-base leading-7 text-gray-200">
+							<dd class="mt-4 text-base leading-7 text-gray-200">
 								{szolg.description}
 							</dd>
 						</div>

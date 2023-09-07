@@ -100,7 +100,7 @@
 </div>
 
 <div class="bg-white">
-	<div class="mx-auto max-w-7xl py-12 px-6 lg:px-8 lg:py-24">
+	<div class="mx-auto max-w-7xl pb-12 px-6 lg:px-8 lg:pb-24">
 		<div class="space-y-12">
 			<div class="text-center">
 				<h2 class="text-3xl text-gray-900 font-bold tracking-tight sm:text-4xl">

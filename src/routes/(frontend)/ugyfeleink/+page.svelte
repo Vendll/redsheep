@@ -7,12 +7,18 @@
 <div class="bg-white">
 	<div class="mx-auto max-w-7xl py-12 px-6 lg:px-8 lg:py-24 mt-12">
 		<div class="space-y-12">
-			<div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{ugyfelekPage.title}</h2>
-				<p class="text-xl text-gray-500">
+			<div class="text-center">
+				<h2 class="text-lg font-semibold leading-8 tracking-tight uppercase text-primary-500">
+					{ugyfelekPage.title}
+				</h2>
+				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+					{ugyfelekPage.title}
+				</h2>
+				<p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
 					{ugyfelekPage.description}
 				</p>
 			</div>
+
 			<ul
 				class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
 			>

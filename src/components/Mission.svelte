@@ -33,7 +33,9 @@
 				{kuldetes.description}
 			</p>
 			<div class="mt-8">
-				<a href="/" class="btn variant-filled-primary uppercase font-semibold">tudj meg többet</a>
+				<a href="/rolunk" class="btn variant-filled-primary uppercase font-semibold"
+					>tudj meg többet</a
+				>
 			</div>
 		</div>
 	</div>

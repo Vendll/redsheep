@@ -26,11 +26,11 @@
 			<div class="absolute inset-0 bg-gray-800/30 mix-blend-multiply" aria-hidden="true" />
 		</div>
 		<div class="grid h-full place-content-center">
-			<div class="relative mx-auto text-center max-w-7xl py-24 px-6 pt-32 lg:px-8">
+			<div class="relative mx-auto text-center max-w-7xl pb-24 px-6 pt-52 lg:px-8">
 				<h1 class="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
 					{hero.title}
 				</h1>
-				<p class="mt-6 mx-auto max-w-3xl text-xl text-gray-300">
+				<p class="mt-12 mx-auto max-w-3xl text-xl text-gray-300">
 					{hero.description}
 				</p>
 				<div class="flex mt-12 space-x-6 justify-center">
@@ -45,7 +45,7 @@
 					>
 				</div>
 			</div>
-			<section class="relative z-10 mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+			<section class="relative z-10 mx-auto max-w-7xl px-6 pb-6 lg:px-8">
 				<div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
 					{#each heroFeatures as feature}
 						<div
@@ -105,8 +105,8 @@
 										</svg>
 									{/if}
 								</div>
-								<h3 class="text-xl font-medium text-white">{feature.title}</h3>
-								<p class="mt-4 text-base text-gray-300">
+								<h3 class="text-lg font-medium text-white">{feature.title}</h3>
+								<p class="mt-4 text-sm text-gray-300">
 									{feature.description}
 								</p>
 							</div>
