@@ -3,7 +3,7 @@
 	"szolgaltatasok": "Services",
 	"blog": "Blog",
 	"kapcsolat": "Contact",
-	"ugyfeleink": "Partners",
+	"ugyfeleink": "Our Clients",
 	"allrights": "All rights reserved",
 	"erdekel": "I'm interested",
 	"partnerek": "Partners",
@@ -14,5 +14,6 @@
 	"phone": "Phone number",
 	"send": "Send",
 	"karakter": "character",
-	"optional": "Optional"
+	"optional": "Optional",
+	"sendsuccess": "Successfully sent! We will contact you shortly!"
 }

@@ -12,9 +12,9 @@
 		<div class="text-center">
 			<h2 class="text-lg font-semibold leading-8 tracking-tight uppercase text-primary-500">
 				{#if language === 'hu'}
-					{blogPage.title}
+					{blogPage.subTitle}
 				{:else}
-					{blogPage.title_en}
+					{blogPage.subTitle_en}
 				{/if}
 			</h2>
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

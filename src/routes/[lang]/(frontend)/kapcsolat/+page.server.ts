@@ -1,6 +1,5 @@
 import { fail } from '@sveltejs/kit';
 import type { Actions } from './$types';
-import toast from 'svelte-french-toast';
 
 export const actions: Actions = {
 	create: async ({ request }) => {
@@ -10,9 +9,6 @@ export const actions: Actions = {
 		try {
 			console.log(data);
 			/* fetch("/api/sendmail"); */
-			toast.success('Sikeres küldés! Hamarosan felvesszük Önnel a kapcsolatot!', {
-				position: 'bottom-center'
-			});
 		} catch (error) {
 			return fail(422, {
 				name: data.get('name'),

@@ -11,9 +11,9 @@
 			<div class="text-center">
 				<h2 class="text-lg font-semibold leading-8 tracking-tight uppercase text-primary-500">
 					{#if language === 'hu'}
-						{ugyfelekPage.title}
+						{ugyfelekPage.subTitle}
 					{:else}
-						{ugyfelekPage.title_en}
+						{ugyfelekPage.subTitle_en}
 					{/if}
 				</h2>
 				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

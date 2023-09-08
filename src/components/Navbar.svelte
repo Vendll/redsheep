@@ -34,6 +34,8 @@
 			navColor = false;
 		}
 	}
+
+	console.log($page.url.pathname.slice(3, $page.url.pathname.length));
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -155,7 +157,7 @@
 			<div class="gap-3 flex">
 				{#each languages as lang}
 					<a
-						href={`${base}/${lang}`}
+						href={`${base}/${lang}${$page.url.pathname.slice(3, $page.url.pathname.length)}`}
 						class="text-sm border border-white rounded-full py-2.5 px-3 uppercase font-semibold leading-6 text-white"
 					>
 						{lang}

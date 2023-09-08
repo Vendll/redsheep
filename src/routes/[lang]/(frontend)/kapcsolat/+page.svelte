@@ -137,7 +137,7 @@
 					use:enhance={() => {
 						return async ({ update }) => {
 							await update();
-							toast.success('Sikeres küldés! Hamarosan felvesszük Önnel a kapcsolatot!', {
+							toast.success(i('sendsuccess'), {
 								position: 'bottom-center',
 								className: 'bg-primary-500'
 							});
