@@ -5,6 +5,8 @@
 	import Footer from '$components/Footer.svelte';
 	import RSlogo from '$lib/RSlogo.png';
 	import { Toaster } from 'svelte-french-toast';
+	import { i, language, languages } from '@inlang/sdk-js';
+	import { base } from '$app/paths';
 	export let data: any;
 	const footer = data.props.footer;
 </script>
@@ -19,9 +21,9 @@
 				class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
 			>
 				<div class="flex items-center justify-between">
-					<a href="/" class="-m-1.5 p-1.5">
-						<span class="sr-only">Your Company</span>
-						<img class="h-8 w-auto" src={RSlogo} alt="" />
+					<a href={`/${language}`} class="-m-1.5 p-1.5">
+						<span class="sr-only">Red Sheep Kft.</span>
+						<img class="h-8 w-auto" src={RSlogo} alt="Red Sheep" />
 					</a>
 					<button
 						on:click={() => drawerStore.close()}
@@ -45,34 +47,40 @@
 					<div class="-my-6 divide-y divide-gray-500/10">
 						<div class="space-y-2 py-6">
 							<a
+								on:click={() => drawerStore.close()}
 								href="/"
 								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-								>Kezdőlap</a
+								>{i('main')}</a
 							>
 							<a
-								href="/rolunk"
+								on:click={() => drawerStore.close()}
+								href={`${base}/${language}/rolunk`}
 								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-								>Rólunk</a
+								>{i('rolunk')}</a
 							>
 							<a
-								href="/szolgaltatasok"
+								on:click={() => drawerStore.close()}
+								href={`${base}/${language}/szolgaltatasok`}
 								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-								>Szolgáltatások</a
+								>{i('szolgaltatasok')}</a
 							>
 							<a
-								href="/blog"
+								on:click={() => drawerStore.close()}
+								href={`${base}/${language}/blog`}
 								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-								>Blog</a
+								>{i('blog')}</a
 							>
 							<a
-								href="/ugyfeleink"
+								on:click={() => drawerStore.close()}
+								href={`${base}/${language}/ugyfeleink`}
 								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-								>Ügyfeleink</a
+								>{i('ugyfeleink')}</a
 							>
 							<a
-								href="/kapcsolat"
+								on:click={() => drawerStore.close()}
+								href={`${base}/${language}/kapcsolat`}
 								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-								>Kapcsolat</a
+								>{i('kapcsolat')}</a
 							>
 						</div>
 					</div>

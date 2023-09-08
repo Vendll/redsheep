@@ -1,5 +1,4 @@
 import type { PageLoad } from './$types';
-import { page } from '$app/stores';
 import { pb } from '$lib/api';
 
 export const load = (async ({ params }) => {

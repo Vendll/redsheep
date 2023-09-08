@@ -7,8 +7,10 @@
 	import RSlogo from '$lib/RSlogo.png';
 	import RSfeher from '$lib/RSfeher.png';
 	import { page } from '$app/stores';
-
+	import { i, language, languages } from '@inlang/sdk-js';
+	import { base } from '$app/paths';
 	import { quintOut } from 'svelte/easing';
+
 	let y: number;
 	let x: number;
 	let screenHeight: any;
@@ -38,16 +40,16 @@
 
 <header
 	class="fixed top-0 w-full z-50"
-	style="background: rgba(227, 6, 19, {$page.url.pathname === '/'
+	style="background: rgba(227, 6, 19, {$page.url.pathname === `${base}/${language}`
 		? y / screenHeight
 		: 1});  transition: opacity 0.5s ease;"
 >
 	<nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
 		<div class="flex lg:flex-1">
-			<a href="/" class="-m-1.5 p-1.5">
-				<span class="sr-only">Your Company</span>
+			<a href={`${base}/${language}`} class="-m-1.5 p-1.5">
+				<span class="sr-only">Red Sheep Kft.</span>
 
-				{#if $page.url.pathname === '/'}
+				{#if $page.url.pathname === `${base}/${language}`}
 					{#if navColor}
 						<img
 							in:fade={{ delay: 100, duration: 500 }}
@@ -99,7 +101,7 @@
 				</svg>
 			</button>
 		</div>
-		<div class="hidden lg:flex lg:gap-x-12">
+		<div class="hidden lg:flex lg:gap-x-12 items-center">
 			<a
 				class={`text-sm font-semibold leading-6 text-white ${
 					$page.url.pathname === '/'
@@ -108,7 +110,7 @@
 							: 'hover:text-secondary-500'
 						: 'hover:text-secondary-500'
 				} transition-all duration-300`}
-				href="/">Home</a
+				href={`${base}/${language}/rolunk`}>{i('rolunk')}</a
 			>
 			<a
 				class={`text-sm font-semibold leading-6 text-white ${
@@ -118,7 +120,7 @@
 							: 'hover:text-secondary-500'
 						: 'hover:text-secondary-500'
 				} transition-all duration-300`}
-				href="/rolunk">Rólunk</a
+				href={`${base}/${language}/szolgaltatasok`}>{i('szolgaltatasok')}</a
 			>
 			<a
 				class={`text-sm font-semibold leading-6 text-white ${
@@ -128,7 +130,7 @@
 							: 'hover:text-secondary-500'
 						: 'hover:text-secondary-500'
 				} transition-all duration-300`}
-				href="/szolgaltatasok">Szolgáltatások</a
+				href={`${base}/${language}/blog`}>{i('blog')}</a
 			>
 			<a
 				class={`text-sm font-semibold leading-6 text-white ${
@@ -138,7 +140,7 @@
 							: 'hover:text-secondary-500'
 						: 'hover:text-secondary-500'
 				} transition-all duration-300`}
-				href="/blog">Blog</a
+				href={`${base}/${language}/ugyfeleink`}>{i('ugyfeleink')}</a
 			>
 			<a
 				class={`text-sm font-semibold leading-6 text-white ${
@@ -148,18 +150,18 @@
 							: 'hover:text-secondary-500'
 						: 'hover:text-secondary-500'
 				} transition-all duration-300`}
-				href="/ugyfeleink">Ügyfeleink</a
+				href={`${base}/${language}/kapcsolat`}>{i('kapcsolat')}</a
 			>
-			<a
-				class={`text-sm font-semibold leading-6 text-white ${
-					$page.url.pathname === '/'
-						? y / screenHeight <= 1
-							? 'hover:text-primary-500'
-							: 'hover:text-secondary-500'
-						: 'hover:text-secondary-500'
-				} transition-all duration-300`}
-				href="/kapcsolat">Kapcsolat</a
-			>
+			<div class="gap-3 flex">
+				{#each languages as lang}
+					<a
+						href={`${base}/${lang}`}
+						class="text-sm border border-white rounded-full py-2.5 px-3 uppercase font-semibold leading-6 text-white"
+					>
+						{lang}
+					</a>
+				{/each}
+			</div>
 		</div>
 	</nav>
 </header>

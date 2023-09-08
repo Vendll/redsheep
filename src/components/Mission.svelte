@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let kuldetes: any;
-	console.log(kuldetes);
+	export let language: any;
+	export let i: any;
 </script>
 
 <div class="relative bg-white lg:mb-12">
@@ -24,17 +25,29 @@
 	<div class="relative mx-auto max-w-7xl py-24 sm:py-32 lg:py-40 lg:px-8">
 		<div class="pr-6 pl-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
 			<h2 class="text-base font-semibold leading-7 text-primary-600 uppercase">
-				{kuldetes.subTitle}
+				{#if language === 'hu'}
+					{kuldetes.subTitle}
+				{:else}
+					{kuldetes.subTitle_en}
+				{/if}
 			</h2>
 			<p class="mt-2 text-4xl font-bold tracking-tight text-surface-900">
-				{kuldetes.title}
+				{#if language === 'hu'}
+					{kuldetes.title}
+				{:else}
+					{kuldetes.title_en}
+				{/if}
 			</p>
 			<p class="mt-6 text-base leading-7 text-surface-700">
-				{kuldetes.description}
+				{#if language === 'hu'}
+					{kuldetes.description}
+				{:else}
+					{kuldetes.description_en}
+				{/if}
 			</p>
 			<div class="mt-8">
 				<a href="/rolunk" class="btn variant-filled-primary uppercase font-semibold"
-					>tudj meg többet</a
+					>{i('knowmore')}</a
 				>
 			</div>
 		</div>

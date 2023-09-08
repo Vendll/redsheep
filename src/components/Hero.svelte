@@ -2,6 +2,8 @@
 	import { scrollTo } from 'svelte-scrolling';
 	export let hero: any;
 	export let heroFeatures: any;
+	export let language: any;
+	export let i: any;
 </script>
 
 <div class="h-fit lg:h-screen overflow-hidden">
@@ -28,20 +30,29 @@
 		<div class="grid h-full place-content-center">
 			<div class="relative mx-auto text-center max-w-7xl pb-24 px-6 pt-52 lg:px-8">
 				<h1 class="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-					{hero.title}
+					{#if language === 'hu'}
+						{hero.title}
+					{:else}
+						{hero.title_en}
+					{/if}
 				</h1>
 				<p class="mt-12 mx-auto max-w-3xl text-xl text-gray-300">
-					{hero.description}
+					{#if language === 'hu'}
+						{hero.description}
+					{:else}
+						{hero.description_en}
+					{/if}
 				</p>
 				<div class="flex mt-12 space-x-6 justify-center">
 					<a
 						href="/szolgaltatasok"
-						class="btn variant-filled-primary uppercase font-semibold btn-lg">Érdekel</a
+						class="btn variant-filled-primary uppercase font-semibold btn-lg">{i('erdekel')}</a
 					>
 					<button
 						use:scrollTo={{ ref: 'blog', duration: 1000, offset: -200 }}
 						type="button"
-						class="btn variant-filled-primary uppercase font-semibold btn-lg">Partnerek</button
+						class="btn variant-filled-primary uppercase font-semibold btn-lg"
+						>{i('partnerek')}</button
 					>
 				</div>
 			</div>
@@ -105,9 +116,19 @@
 										</svg>
 									{/if}
 								</div>
-								<h3 class="text-lg font-medium text-white">{feature.title}</h3>
+								<h3 class="text-lg font-medium text-white">
+									{#if language === 'hu'}
+										{feature.title}
+									{:else}
+										{feature.title_en}
+									{/if}
+								</h3>
 								<p class="mt-4 text-sm text-gray-300">
-									{feature.description}
+									{#if language === 'hu'}
+										{feature.description}
+									{:else}
+										{feature.description_en}
+									{/if}
 								</p>
 							</div>
 						</div>

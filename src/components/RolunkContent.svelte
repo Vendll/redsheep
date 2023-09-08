@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { i, language } from '@inlang/sdk-js';
 	export let rolunkTop: any;
 	export let rolunkMiddle: any;
 	export let teamTexts: any;
@@ -44,13 +45,25 @@
 			<!-- Content area -->
 			<div class="pt-12 sm:pt-16 lg:pt-20">
 				<p class="text-base font-semibold leading-7 text-primary-500 uppercase">
-					{rolunkTop.subTitle}
+					{#if language === 'hu'}
+						{rolunkTop.subTitle}
+					{:else}
+						{rolunkTop.subTitle_en}
+					{/if}
 				</p>
 				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-					{rolunkTop.title}
+					{#if language === 'hu'}
+						{rolunkTop.title}
+					{:else}
+						{rolunkTop.title_en}
+					{/if}
 				</h2>
 				<div class="mt-6 space-y-6 text-gray-500">
-					{@html rolunkTop.description}
+					{#if language === 'hu'}
+						{@html rolunkTop.description}
+					{:else}
+						{@html rolunkTop.description_en}
+					{/if}
 				</div>
 			</div>
 		</div>
@@ -62,10 +75,18 @@
 			<!-- Content area -->
 			<div class="pt-0 sm:pt-16 lg:pt-20">
 				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-					{rolunkMiddle.title}
+					{#if language === 'hu'}
+						{rolunkMiddle.title}
+					{:else}
+						{rolunkMiddle.title_en}
+					{/if}
 				</h2>
 				<div class="mt-8 space-y-8 text-gray-500">
-					{@html rolunkMiddle.description}
+					{#if language === 'hu'}
+						{@html rolunkMiddle.description}
+					{:else}
+						{@html rolunkMiddle.description_en}
+					{/if}
 				</div>
 			</div>
 		</div>
@@ -104,10 +125,18 @@
 		<div class="space-y-12">
 			<div class="text-center">
 				<h2 class="text-3xl text-gray-900 font-bold tracking-tight sm:text-4xl">
-					{teamTexts.title}
+					{#if language === 'hu'}
+						{teamTexts.title}
+					{:else}
+						{teamTexts.title_en}
+					{/if}
 				</h2>
 				<p class="text-lg font-light mt-6 leading-8 text-gray-500">
-					{teamTexts.description}
+					{#if language === 'hu'}
+						{teamTexts.description}
+					{:else}
+						{teamTexts.description_en}
+					{/if}
 				</p>
 			</div>
 
@@ -138,11 +167,21 @@
 								<div class="space-y-4">
 									<div class="space-y-1 text-lg font-medium leading-6">
 										<h3>{member.name}</h3>
-										<p class="text-primary-500">{member.position}</p>
+										<p class="text-primary-500">
+											{#if language === 'hu'}
+												{member.position}
+											{:else}
+												{member.position_en}
+											{/if}
+										</p>
 									</div>
 									<div class="text-lg">
 										<p class="text-gray-500">
-											{member.quote}
+											{#if language === 'hu'}
+												{member.quote}
+											{:else}
+												{member.quote_en}
+											{/if}
 										</p>
 									</div>
 								</div>

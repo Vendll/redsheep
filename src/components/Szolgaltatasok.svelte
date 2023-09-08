@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { i, language } from '@inlang/sdk-js';
 	export let szolgaltatasokPage: any;
 	export let szolgaltatasok: any;
 </script>
@@ -7,13 +8,25 @@
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-4xl lg:text-center">
 			<h2 class="text-lg font-semibold leading-8 tracking-tight uppercase text-primary-500">
-				{szolgaltatasokPage.subTitle}
+				{#if language === 'hu'}
+					{szolgaltatasokPage.subTitle}
+				{:else}
+					{szolgaltatasokPage.subTitle_en}
+				{/if}
 			</h2>
 			<p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-				{szolgaltatasokPage.title}
+				{#if language === 'hu'}
+					{szolgaltatasokPage.title}
+				{:else}
+					{szolgaltatasokPage.title_en}
+				{/if}
 			</p>
 			<p class="mt-6 text-lg leading-8 text-gray-500">
-				{szolgaltatasokPage.description}
+				{#if language === 'hu'}
+					{szolgaltatasokPage.description}
+				{:else}
+					{szolgaltatasokPage.description_en}
+				{/if}
 			</p>
 		</div>
 		<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
@@ -93,10 +106,18 @@
 										</svg>{/if}
 									<!-- Heroicon name: outline/cloud-arrow-up -->
 								</div>
-								{szolg.title}
+								{#if language === 'hu'}
+									{szolg.title}
+								{:else}
+									{szolg.title_en}
+								{/if}
 							</dt>
 							<dd class="mt-4 text-base leading-7 text-gray-200">
-								{szolg.description}
+								{#if language === 'hu'}
+									{szolg.description}
+								{:else}
+									{szolg.description_en}
+								{/if}
 							</dd>
 						</div>
 					</div>

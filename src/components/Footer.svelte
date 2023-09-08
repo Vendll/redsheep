@@ -1,17 +1,23 @@
 <script lang="ts">
+	import { i, language } from '@inlang/sdk-js';
+	import { base } from '$app/paths';
 	const year = new Date().getFullYear();
 	export let footer: any;
 </script>
 
 <footer class="bg-secondary-800">
 	<div class="mx-auto max-w-7xl overflow-hidden py-20 px-6 sm:py-24 lg:px-8">
-		<nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+		<nav class="-mb-6 flex justify-center space-x-12" aria-label="Footer">
 			<div class="pb-6">
-				<a href="/rolunk" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Rólunk</a>
+				<a href={`/${language}/rolunk`} class="text-sm leading-6 text-gray-400 hover:text-gray-300"
+					>{i('rolunk')}</a
+				>
 			</div>
 
 			<div class="pb-6">
-				<a href="/blog" class="text-sm leading-6 text-gray-400 hover:text-gray-300">Blog</a>
+				<a href={`/${language}/blog`} class="text-sm leading-6 text-gray-400 hover:text-gray-300"
+					>{i('blog')}</a
+				>
 			</div>
 
 			<!-- <div class="pb-6">
@@ -27,8 +33,9 @@
 			</div> -->
 
 			<div class="pb-6">
-				<a href="/kapcsolat" class="text-sm leading-6 text-gray-400 hover:text-gray-300"
-					>Kapcsolat</a
+				<a
+					href={`/${language}/kapcsolat`}
+					class="text-sm leading-6 text-gray-400 hover:text-gray-300">{i('kapcsolat')}</a
 				>
 			</div>
 		</nav>
@@ -99,7 +106,7 @@
 				</a>{/if}
 		</div>
 		<p class="mt-10 text-center text-xs leading-5 text-gray-500">
-			&copy; {year} Red Sheep Kft. Minden jog fenttartva.
+			&copy; {year} Red Sheep Kft. {i('allrights')}.
 		</p>
 	</div>
 </footer>

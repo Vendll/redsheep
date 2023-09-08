@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { i, language } from '@inlang/sdk-js';
 	export let data: any;
 	const ugyfelek = data.props.ugyfelek;
 	const ugyfelekPage = data.props.ugyfelekPage;
@@ -9,13 +10,25 @@
 		<div class="space-y-12">
 			<div class="text-center">
 				<h2 class="text-lg font-semibold leading-8 tracking-tight uppercase text-primary-500">
-					{ugyfelekPage.title}
+					{#if language === 'hu'}
+						{ugyfelekPage.title}
+					{:else}
+						{ugyfelekPage.title_en}
+					{/if}
 				</h2>
 				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-					{ugyfelekPage.title}
+					{#if language === 'hu'}
+						{ugyfelekPage.title}
+					{:else}
+						{ugyfelekPage.title_en}
+					{/if}
 				</h2>
 				<p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-					{ugyfelekPage.description}
+					{#if language === 'hu'}
+						{ugyfelekPage.description}
+					{:else}
+						{ugyfelekPage.description_en}
+					{/if}
 				</p>
 			</div>
 
@@ -25,30 +38,38 @@
 				{#each ugyfelek as ugyfel}
 					<li>
 						<div class="space-y-4">
-							<div class="aspect-w-3 aspect-h-2">
-								{#if ugyfel.image}
-									<img
-										class="rounded-[--theme-rounded-base] object-contain shadow-lg"
-										src={`https://redsheep.sudev.hu/api/files/${ugyfel.collectionId}/${ugyfel.id}/${ugyfel.image}`}
-										alt={ugyfel.company}
-									/>
-								{:else}
-									<img
-										class="rounded-[--theme-rounded-base] object-cover shadow-lg"
-										src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-										alt=""
-									/>
-								{/if}
-							</div>
+							<a href={`/${language}/ugyfeleink/${ugyfel.id}`} class="group">
+								<div class="aspect-w-3 aspect-h-2">
+									{#if ugyfel.image}
+										<img
+											class="rounded-[--theme-rounded-base] object-contain shadow-lg"
+											src={`https://redsheep.sudev.hu/api/files/${ugyfel.collectionId}/${ugyfel.id}/${ugyfel.image}`}
+											alt={ugyfel.company}
+										/>
+									{:else}
+										<img
+											class="rounded-[--theme-rounded-base] object-cover shadow-lg"
+											src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+											alt=""
+										/>
+									{/if}
+								</div>
+							</a>
 
 							<div class="space-y-2">
 								<div class="space-y-1 text-lg font-medium leading-6">
-									<h3>{ugyfel.company}</h3>
+									<a href={`/${language}/ugyfeleink/${ugyfel.id}`} class="hover:underline"
+										>{ugyfel.company}</a
+									>
 								</div>
 								<ul class="flex space-x-5">
 									{#if ugyfel.twitter}
 										<li>
-											<a href={ugyfel.twitter} class="text-gray-400 hover:text-primary-500">
+											<a
+												href={ugyfel.twitter}
+												target="_blank"
+												class="text-gray-400 hover:text-primary-500"
+											>
 												<span class="sr-only">Twitter</span>
 												<svg
 													class="h-6 w-6"
@@ -65,7 +86,11 @@
 									{/if}
 									{#if ugyfel.facebook}
 										<li>
-											<a href={ugyfel.facebook} class="text-gray-400 hover:text-primary-500">
+											<a
+												href={ugyfel.facebook}
+												target="_blank"
+												class="text-gray-400 hover:text-primary-500"
+											>
 												<span class="sr-only">Facebook</span>
 												<svg
 													class="h-6 w-6"
@@ -84,7 +109,11 @@
 									{/if}
 									{#if ugyfel.instagram}
 										<li>
-											<a href={ugyfel.instagram} class="text-gray-400 hover:text-primary-500">
+											<a
+												href={ugyfel.instagram}
+												target="_blank"
+												class="text-gray-400 hover:text-primary-500"
+											>
 												<span class="sr-only">Instagram</span>
 												<svg
 													class="h-6 w-6"
@@ -103,7 +132,11 @@
 									{/if}
 									{#if ugyfel.youtube}
 										<li>
-											<a href={ugyfel.youtube} class="text-gray-400 hover:text-primary-500">
+											<a
+												href={ugyfel.youtube}
+												target="_blank"
+												class="text-gray-400 hover:text-primary-500"
+											>
 												<span class="sr-only">YouTube</span>
 												<svg
 													class="h-6 w-6"
@@ -122,7 +155,11 @@
 									{/if}
 									{#if ugyfel.tiktok}
 										<li>
-											<a href={ugyfel.tiktok} class="text-gray-400 hover:text-primary-500">
+											<a
+												href={ugyfel.tiktok}
+												target="_blank"
+												class="text-gray-400 hover:text-primary-500"
+											>
 												<span class="sr-only">Tiktok</span>
 												<svg
 													fill="currentColor"
@@ -139,7 +176,11 @@
 									{/if}
 									{#if ugyfel.linkedin}
 										<li>
-											<a href={ugyfel.linkedin} class="text-gray-400 hover:text-primary-500">
+											<a
+												href={ugyfel.linkedin}
+												target="_blank"
+												class="text-gray-400 hover:text-primary-500"
+											>
 												<span class="sr-only">LinkedIn</span>
 												<svg
 													class="h-6 w-6"

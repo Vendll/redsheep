@@ -7,7 +7,6 @@ export const load = async () => {
 	const resultKuldetes = await pb.collection('kuldetesunk').getFirstListItem('');
 	const rolunkMondtak = await pb.collection('rolunkmondtak').getFullList();
 	const mainCTA = await pb.collection('mainCTA').getFirstListItem('');
-	const footer = await pb.collection('footer').getFirstListItem('');
 
 	return {
 		props: {
@@ -16,8 +15,7 @@ export const load = async () => {
 			partnerek: resultPartnerek,
 			kuldetes: resultKuldetes,
 			rolunkMondtak: rolunkMondtak,
-			mainCTA: mainCTA,
-			footer: footer
+			mainCTA: mainCTA
 		}
 	};
 };

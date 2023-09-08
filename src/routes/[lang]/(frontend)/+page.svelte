@@ -4,6 +4,7 @@
 	import Mission from '$components/Mission.svelte';
 	import Testimonials from '$components/Testimonials.svelte';
 	import Cta from '$components/Cta.svelte';
+	import { i, language } from '@inlang/sdk-js';
 
 	export let data: any;
 	const hero = data.props.hero;
@@ -12,12 +13,10 @@
 	const kuldetes = data.props.kuldetes;
 	const rolunkMondtak = data.props.rolunkMondtak;
 	const mainCTA = data.props.mainCTA;
-	const footer = data.props.footer;
-	console.log(footer);
 </script>
 
-<Hero {hero} {heroFeatures} />
-<LogoCloud {partnerek} />
-<Mission {kuldetes} />
-<Testimonials {rolunkMondtak} />
-<Cta {mainCTA} />
+<Hero {i} {language} {hero} {heroFeatures} />
+<LogoCloud {language} {partnerek} />
+<Mission {i} {language} {kuldetes} />
+<Testimonials {language} {rolunkMondtak} />
+<Cta {language} {mainCTA} />

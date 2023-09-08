@@ -15,8 +15,7 @@ export const actions: Actions = {
 			});
 		} catch (error) {
 			return fail(422, {
-				firstName: data.get('firstName'),
-				lastName: data.get('lastName'),
+				name: data.get('name'),
 				email: data.get('email'),
 				message: data.get('message'),
 				error: error.message
