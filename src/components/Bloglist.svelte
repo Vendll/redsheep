@@ -4,7 +4,7 @@
 	export let blogPage: any;
 </script>
 
-<div class="relative bg-gray-50 px-6 pt-16 pb-20 lg:px-8 lg:pt-28 lg:pb-28">
+<div class="relative bg-gray-50 px-6 pb-20 lg:px-8 pt-28 lg:pb-28">
 	<div class="absolute inset-0">
 		<div class="h-1/3 bg-white sm:h-2/3" />
 	</div>
@@ -39,7 +39,7 @@
 						<div class="flex-shrink-0 overflow-hidden transition-[scale] !duration-1000">
 							<img
 								class="h-56 group-hover:scale-110 w-full object-cover"
-								src={`https://redsheep.sudev.hu/api/files/${blog.collectionId}/${blog.id}/${blog.thumbnail}`}
+								src={`https://redsheep.sudev.hu/api/files/${blog.collectionId}/${blog.id}/${blog.thumbnail}?thumb=500x300f`}
 								alt=""
 							/>
 						</div>

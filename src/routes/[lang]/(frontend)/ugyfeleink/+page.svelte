@@ -6,7 +6,7 @@
 </script>
 
 <div class="bg-white">
-	<div class="mx-auto max-w-7xl py-12 px-6 lg:px-8 lg:py-24 mt-12">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8 py-28">
 		<div class="space-y-12">
 			<div class="text-center">
 				<h2 class="text-lg font-semibold leading-8 tracking-tight uppercase text-primary-500">
@@ -43,7 +43,7 @@
 									{#if ugyfel.image}
 										<img
 											class="rounded-[--theme-rounded-base] object-contain shadow-lg"
-											src={`https://redsheep.sudev.hu/api/files/${ugyfel.collectionId}/${ugyfel.id}/${ugyfel.image}`}
+											src={`https://redsheep.sudev.hu/api/files/${ugyfel.collectionId}/${ugyfel.id}/${ugyfel.image}?thumb=500x300f`}
 											alt={ugyfel.company}
 										/>
 									{:else}

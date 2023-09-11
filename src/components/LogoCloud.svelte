@@ -5,7 +5,7 @@
 </script>
 
 <div use:scrollRef={'blog'} class="bg-white py-24 sm:py-32">
-	<div class="mx-auto max-w-7xl px-6 lg:px-8">
+	<div class="px-6 lg:px-8">
 		<h2 class="text-center text-2xl font-semibold leading-8 text-gray-900">
 			{#if language === 'hu'}
 				{partnerek.title}
@@ -14,12 +14,12 @@
 			{/if}
 		</h2>
 		<div
-			class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-7xl lg:flex lg:justify-center lg:overflow-auto"
+			class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto px-4 py-10"
 		>
 			{#each partnerek.logok as logo}
 				<img
-					class="h-full aspect-square max-h-24 w-full object-contain"
-					src={`https://redsheep.sudev.hu/api/files/${partnerek.collectionId}/${partnerek.id}/${logo}`}
+					class="h-32 snap-start aspect-square max-h-32 w-32 object-contain"
+					src={`https://redsheep.sudev.hu/api/files/${partnerek.collectionId}/${partnerek.id}/${logo}?thumb=150x150f`}
 					alt={logo}
 				/>
 			{/each}

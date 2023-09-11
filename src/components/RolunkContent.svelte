@@ -8,7 +8,7 @@
 
 <!-- {`https://redsheep.sudev.hu/api/files/${partnerek.collectionId}/${partnerek.id}/${logo}`} -->
 
-<div class="relative bg-white pt-24 pb-10 sm:pb-24">
+<div class="relative bg-white pt-28 pb-10 sm:pb-24">
 	<div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
 		<div class="relative sm:py-16 lg:py-0">
 			<div
@@ -23,7 +23,7 @@
 					{#if rolunkTop.image}
 						<img
 							class="absolute inset-0 h-full w-full object-cover"
-							src={`https://redsheep.sudev.hu/api/files/${rolunkTop.collectionId}/${rolunkTop.id}/${rolunkTop.image}`}
+							src={`https://redsheep.sudev.hu/api/files/${rolunkTop.collectionId}/${rolunkTop.id}/${rolunkTop.image}?thumb=760x760f`}
 							alt=""
 						/>
 					{:else}
@@ -104,7 +104,7 @@
 					{#if rolunkMiddle.image}
 						<img
 							class="absolute inset-0 h-full w-full object-cover"
-							src={`https://redsheep.sudev.hu/api/files/${rolunkMiddle.collectionId}/${rolunkMiddle.id}/${rolunkMiddle.image}`}
+							src={`https://redsheep.sudev.hu/api/files/${rolunkMiddle.collectionId}/${rolunkMiddle.id}/${rolunkMiddle.image}?thumb=760x760f`}
 							alt=""
 						/>
 					{:else}
@@ -152,7 +152,7 @@
 								{#if member.image}
 									<img
 										class="rounded-lg object-cover shadow-lg transition-all duration-500 hover:scale-110"
-										src={`https://redsheep.sudev.hu/api/files/${member.collectionId}/${member.id}/${member.image}`}
+										src={`https://redsheep.sudev.hu/api/files/${member.collectionId}/${member.id}/${member.image}?thumb=200x260f`}
 										alt=""
 									/>
 								{:else}

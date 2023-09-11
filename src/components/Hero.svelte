@@ -13,7 +13,8 @@
 			{#if hero.image}
 				<img
 					class="!h-full w-full object-cover"
-					src={`https://redsheep.sudev.hu/api/files/${hero.collectionId}/${hero.id}/${hero.image}`}
+					loading="eager"
+					src={`https://redsheep.sudev.hu/api/files/${hero.collectionId}/${hero.id}/${hero.image}?thumb=1500x1500`}
 					alt={hero.title}
 				/>
 			{:else if hero.url}
@@ -28,7 +29,7 @@
 			<div class="absolute inset-0 bg-gray-800/30 mix-blend-multiply" aria-hidden="true" />
 		</div>
 		<div class="grid h-full place-content-center">
-			<div class="relative mx-auto text-center max-w-7xl pb-24 px-6 pt-52 lg:px-8">
+			<div class="relative mx-auto text-center max-w-7xl pb-24 px-6 pt-64 lg:px-8">
 				<h1 class="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
 					{#if language === 'hu'}
 						{hero.title}

@@ -4,7 +4,7 @@
 	export let szolgaltatasok: any;
 </script>
 
-<div class="bg-white py-24 sm:py-32">
+<div class="bg-white py-28">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-4xl lg:text-center">
 			<h2 class="text-lg font-semibold leading-8 tracking-tight uppercase text-primary-500">

@@ -15,7 +15,7 @@
 			{/if}
 		</h2>
 		<div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
-			<a href="/kapcsolat" class="btn variant-filled-primary uppercase font-semibold">
+			<a href={`${language}/kapcsolat`} class="btn variant-filled-primary uppercase font-semibold">
 				{#if language === 'hu'}
 					{mainCTA.buttonLabel}
 				{:else}
