@@ -94,7 +94,7 @@
 				</a>
 			{/if}
 			{#if footer.linkedin}
-				<a href={footer.youtube} target="_blank" class="text-gray-400 hover:text-gray-300">
+				<a href={footer.linkedin} target="_blank" class="text-gray-400 hover:text-gray-300">
 					<span class="sr-only">LinkedIn</span>
 					<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
 						<path
@@ -105,7 +105,7 @@
 					</svg>
 				</a>{/if}
 		</div>
-		<p class="mt-10 text-center text-xs leading-5 text-gray-500">
+		<p class="mt-10 text-center text-xs leading-5 text-gray-400">
 			&copy; {year} Red Sheep Kft. {i('allrights')}.
 		</p>
 	</div>

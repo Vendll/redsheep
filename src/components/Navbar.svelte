@@ -34,8 +34,6 @@
 			navColor = false;
 		}
 	}
-
-	console.log($page.url.pathname.slice(3, $page.url.pathname.length));
 </script>
 
 <svelte:window bind:scrollY={y} />

@@ -8,8 +8,6 @@ export const load = async () => {
 	const rolunkMondtak = await pb.collection('rolunkmondtak').getFullList();
 	const mainCTA = await pb.collection('mainCTA').getFirstListItem('');
 
-	console.log(resultHero);
-
 	return {
 		props: {
 			hero: resultHero,

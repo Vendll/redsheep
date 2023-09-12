@@ -46,7 +46,7 @@
 				</p>
 				<div class="flex mt-12 space-x-6 justify-center">
 					<a
-						href="/szolgaltatasok"
+						href={`${language}/szolgaltatasok`}
 						class="btn variant-filled-primary uppercase font-semibold btn-lg">{i('erdekel')}</a
 					>
 					<button

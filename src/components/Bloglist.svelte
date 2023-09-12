@@ -34,37 +34,39 @@
 		</div>
 		<div class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
 			{#each blogList as blog}
-				<div class="flex flex-col overflow-hidden rounded-[--theme-rounded-base] shadow-lg">
-					<a href={`/${language}/blog/${blog.id}`} class="group">
-						<div class="flex-shrink-0 overflow-hidden transition-[scale] !duration-1000">
-							<img
-								class="h-56 group-hover:scale-110 w-full object-cover"
-								src={`https://redsheep.sudev.hu/api/files/${blog.collectionId}/${blog.id}/${blog.thumbnail}?thumb=500x300f`}
-								alt=""
-							/>
-						</div>
-						<div class="flex flex-1 flex-col justify-between bg-white p-6">
-							<div class="flex-1">
-								<div class="mt-2 block">
-									<p class="text-xl font-semibold text-gray-900">
-										{#if language === 'hu'}
-											{blog.title}
-										{:else}
-											{blog.title_en}
-										{/if}
-									</p>
-									<p class="mt-3 text-base text-gray-500 line-clamp-3">
-										{#if language === 'hu'}
-											{blog.shortDesc}
-										{:else}
-											{blog.shortDesc_en}
-										{/if}
-									</p>
-								</div>
+				{#if (language === 'hu' && !blog.title) || (language === 'en' && !blog.title_en)}{:else}
+					<div class="flex flex-col overflow-hidden rounded-[--theme-rounded-base] shadow-lg">
+						<a href={`/${language}/blog/${blog.id}`} class="group">
+							<div class="flex-shrink-0 overflow-hidden transition-[scale] !duration-1000">
+								<img
+									class="h-56 group-hover:scale-110 w-full object-cover"
+									src={`https://redsheep.sudev.hu/api/files/${blog.collectionId}/${blog.id}/${blog.thumbnail}?thumb=500x300f`}
+									alt=""
+								/>
 							</div>
-						</div></a
-					>
-				</div>
+							<div class="flex flex-1 flex-col justify-between bg-white p-6">
+								<div class="flex-1">
+									<div class="mt-2 block">
+										<p class="text-xl font-semibold text-gray-900">
+											{#if language === 'hu'}
+												{blog.title}
+											{:else}
+												{blog.title_en}
+											{/if}
+										</p>
+										<p class="mt-3 text-base text-gray-500 line-clamp-3">
+											{#if language === 'hu'}
+												{blog.shortDesc}
+											{:else}
+												{blog.shortDesc_en}
+											{/if}
+										</p>
+									</div>
+								</div>
+							</div></a
+						>
+					</div>
+				{/if}
 			{/each}
 		</div>
 	</div>
