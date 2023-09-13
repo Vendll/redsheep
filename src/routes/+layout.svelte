@@ -11,8 +11,8 @@
 
 <svelte:head>
 	<title>Red Sheep</title>
-	<meta name="title" content="Red Sheep" />
-	<meta name="og:title" content="Red Sheep" />
+	<meta name="title" content="Red Sheep Marketing Agency" />
+	<meta name="og:title" content="Red Sheep Marketing Agency" />
 	<meta
 		name="description"
 		content="Mi a Red Sheep-nél levesszük a marketing feladatok és a rendezvényszervezés nehézségeit a válladról."
