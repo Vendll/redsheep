@@ -147,12 +147,12 @@
 					<li>
 						<div class="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
 							<div
-								class="aspect-w-3 aspect-h-2 h-0 sm:aspect-w-3 sm:aspect-h-4 overflow-hidden rounded-lg transition-[scale] !duration-1000"
+								class=" aspect-w-3 aspect-h-4 overflow-hidden rounded-lg transition-[scale] !duration-1000"
 							>
 								{#if member.image}
 									<img
 										class="rounded-lg object-cover shadow-lg transition-all duration-500 hover:scale-110"
-										src={`https://redsheep.sudev.hu/api/files/${member.collectionId}/${member.id}/${member.image}?thumb=200x260f`}
+										src={`https://redsheep.sudev.hu/api/files/${member.collectionId}/${member.id}/${member.image}?thumb=400x660f`}
 										alt=""
 									/>
 								{:else}
