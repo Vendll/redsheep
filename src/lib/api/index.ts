@@ -1,3 +1,3 @@
 import PocketBase from 'pocketbase';
 
-export const pb = new PocketBase('https://redsheep.thesu.dev');
+export const pb = new PocketBase('https://redsheep.sudev.hu');
