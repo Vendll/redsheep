@@ -34,7 +34,7 @@
 		</div>
 		<div class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
 			{#each blogList as blog}
-				{#if (language === 'hu' && !blog.title) || (language === 'en' && !blog.title_en)}{:else}
+				{#if (language !== 'hu' && blog.title) || (language !== 'en' && blog.title_en)}
 					<div class="flex flex-col overflow-hidden rounded-[--theme-rounded-base] shadow-lg">
 						<a href={`/${language}/blog/${blog.id}`} class="group">
 							<div class="flex-shrink-0 overflow-hidden transition-[scale] !duration-1000">
